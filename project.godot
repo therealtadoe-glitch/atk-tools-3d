@@ -14,6 +14,14 @@ config/name="Atk Tools 3D"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Randomizer="*res://addons/atk_tools/tools/randomizer.gd"
+
 [dotnet]
 
 project/assembly_name="Atk Tools 3D"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/atk_tools/plugin.cfg")

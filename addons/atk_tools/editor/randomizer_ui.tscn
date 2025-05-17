@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://oc7q8bmcs0ts"]
+
+[ext_resource type="Script" uid="uid://b23nrhbxipqo1" path="res://addons/atk_tools/editor/randomizer_ui.gd" id="1_yk7mx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4uhi3"]
+content_margin_right = 32.0
+
+[node name="Randomizer" type="VBoxContainer"]
+script = ExtResource("1_yk7mx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Randomizer"
+
+[node name="Settings" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RandomRotation" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Settings/RandomRotation"]
+layout_mode = 2
+text = "Rotation Axis"
+
+[node name="CheckBoxLayout" type="HBoxContainer" parent="Settings/RandomRotation"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="AxisX" type="CheckBox" parent="Settings/RandomRotation/CheckBoxLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "X"
+
+[node name="AxisY" type="CheckBox" parent="Settings/RandomRotation/CheckBoxLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Y"
+
+[node name="AxisZ" type="CheckBox" parent="Settings/RandomRotation/CheckBoxLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Z"
+
+[node name="RandomScale" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Settings/RandomScale"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4uhi3")
+text = "Base  Scale"
+
+[node name="ScaleValue" type="SpinBox" parent="Settings/RandomScale"]
+unique_name_in_owner = true
+layout_mode = 2

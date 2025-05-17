@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2sgh3527fncg"]
+
+[ext_resource type="Script" uid="uid://danhxjwscmpog" path="res://addons/atk_tools/editor/interface.gd" id="1_0tcc1"]
+[ext_resource type="Texture2D" uid="uid://cmtpi5fhnxjt1" path="res://addons/atk_tools/atk_icon.svg" id="2_4uhi3"]
+[ext_resource type="PackedScene" uid="uid://oc7q8bmcs0ts" path="res://addons/atk_tools/editor/randomizer_ui.tscn" id="3_l2vk5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tcc1"]
+content_margin_left = 32.0
+
+[node name="Interface" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+script = ExtResource("1_0tcc1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Branding" type="HBoxContainer" parent="VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="PluginIcon" type="TextureRect" parent="VBoxContainer/Header/Branding"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_4uhi3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PluginNameLabel" type="Label" parent="VBoxContainer/Header/Branding"]
+layout_mode = 2
+text = "ATK Tools 3D"
+
+[node name="VersionLabel" type="Label" parent="VBoxContainer/Header/Branding"]
+modulate = Color(1, 1, 1, 0.462745)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0tcc1")
+text = "version 1.0"
+
+[node name="UI" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Randomizer" parent="VBoxContainer/UI" instance=ExtResource("3_l2vk5")]
+layout_mode = 2
